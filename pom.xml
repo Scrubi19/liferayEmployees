@@ -15,7 +15,7 @@
 		<liferayVersion>${liferay.version}</liferayVersion>
 		<liferay.maven.plugin.version>${liferay.version}</liferay.maven.plugin.version>
 
-		<portal.dir>/home/scrubi19/ProgramFiles/liferay-portal-tomcat-6.2-ce-ga6-20160112152609836/liferay-portal-6.2-ce-ga6</portal.dir>
+		<portal.dir>/home/scrubi19/ProgramFiles/liferay-portal-6.2-ce-ga6</portal.dir>
 		<tomcat.dir>${portal.dir}/tomcat-7.0.62</tomcat.dir>
 
 		<liferay.app.server.deploy.dir>${tomcat.dir}/webapps</liferay.app.server.deploy.dir>

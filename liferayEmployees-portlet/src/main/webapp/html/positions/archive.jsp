@@ -11,7 +11,7 @@
         <liferay-ui:search-container-column-text property="position_id" name = "Position id"/>
         <liferay-ui:search-container-column-text property="position_name" name = "Position name"/>
         <liferay-ui:search-container-column-text property="archive_status" name = "Archive status"/>
-        <%--        <liferay-ui:search-container-column-jsp  path="/html/employees/buttons/archive.jsp" align="right"/>--%>
+        <liferay-ui:search-container-column-jsp  path="/html/positions/buttons/archive.jsp" align="right"/>
 
     </liferay-ui:search-container-row>
 

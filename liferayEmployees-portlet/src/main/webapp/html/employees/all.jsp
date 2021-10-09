@@ -26,7 +26,7 @@
         <liferay-ui:search-container-column-text property="mobile_phonenumber" name = "Mobile phonenumber"/>
         <liferay-ui:search-container-column-text property="bank_id" name = "Bank id"/>
         <liferay-ui:search-container-column-text property="archive_status" name = "Archive"/>
-<%--        <liferay-ui:search-container-column-jsp  path="/html/employees/buttons/archive.jsp" align="right"/>--%>
+        <liferay-ui:search-container-column-jsp  path="/html/employees/buttons/archive.jsp" align="right"/>
 
     </liferay-ui:search-container-row>
 

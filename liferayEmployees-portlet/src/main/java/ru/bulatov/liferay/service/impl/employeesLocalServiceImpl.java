@@ -21,7 +21,10 @@ import java.util.List;
  * @see ru.bulatov.liferay.service.employeesLocalServiceUtil
  */
 public class employeesLocalServiceImpl extends employeesLocalServiceBaseImpl {
-    public List<employees> getemployeesesByArchive(boolean archive, int start, int end) throws SystemException {
+    public List<employees> getemployeesesByArchive(boolean archive) throws SystemException {
         return employeesPersistence.findByArchive(archive);
+    }
+    public List<employees> getBankClients(long bankID) throws SystemException {
+        return employeesPersistence.findByBank_id(bankID);
     }
 }

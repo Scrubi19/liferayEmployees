@@ -1,14 +1,10 @@
 <%@include file="/html/init.jsp"%>
 
-<portlet:renderURL var="addEmployee">
-    <portlet:param name="mvcPath" value="/html/employees/add.jsp"/>
-</portlet:renderURL>
-
-<aui:button onClick="<%= addEmployee %>" value="Add Employee"/>
+<jsp:useBean id="currentBankWithClients" type="ru.bulatov.liferay.model.banks" scope="request" />
 
 <liferay-ui:search-container>
     <liferay-ui:search-container-results
-            results="<%= employeesLocalServiceUtil.getemployeesesByArchive(true)%>"/>
+            results="<%= employeesLocalServiceUtil.getBankClients(currentBankWithClients.getBank_id()) %>"/>
 
     <liferay-ui:search-container-row
             className="ru.bulatov.liferay.model.employees" modelVar="employees">
@@ -27,17 +23,16 @@
         <liferay-ui:search-container-column-text property="bank_id" name = "Bank id"/>
         <liferay-ui:search-container-column-text property="archive_status" name = "Archive"/>
         <liferay-ui:search-container-column-jsp  path="/html/employees/buttons/archive.jsp" align="right"/>
-
     </liferay-ui:search-container-row>
 
     <liferay-ui:search-iterator />
 </liferay-ui:search-container>
 
-<aui:button-row cssClass="back">
+<aui:button-row cssClass="menu-buttons">
 
-    <portlet:renderURL var="backViewURL">
-        <portlet:param name="mvcPath" value="/html/employees/menu.jsp"/>
+    <portlet:renderURL var="backURL">
+        <portlet:param name="mvcPath" value="/html/employees/all.jsp"/>
     </portlet:renderURL>
 
-    <aui:button onClick="<%= backViewURL %>" value="Back"/>
+    <aui:button onClick="<%= backURL %>" value="Back"/>
 </aui:button-row>

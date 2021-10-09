@@ -2,7 +2,7 @@
 
 <liferay-ui:search-container>
     <liferay-ui:search-container-results
-            results="<%= employeesLocalServiceUtil.getemployeesesByArchive(false, searchContainer.getStart(), searchContainer.getEnd())%>"/>
+            results="<%= employeesLocalServiceUtil.getemployeesesByArchive(false) %>"/>
 
     <liferay-ui:search-container-row
             className="ru.bulatov.liferay.model.employees" modelVar="employees">

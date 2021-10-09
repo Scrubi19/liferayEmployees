@@ -150,8 +150,7 @@ public class LiferayEmployeesPortlet extends MVCPortlet {
         response.setRenderParameter("jspPage", "/html/positions/menu.jsp");
     }
 
-    // Flag operations
-
+    // Archive operations
     public void swapEmployeeByArchive(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
         employees currentEmployee = employeesLocalServiceUtil.
                 getemployees(Long.parseLong(request.getParameter("currentEmployeeID")));
@@ -161,7 +160,6 @@ public class LiferayEmployeesPortlet extends MVCPortlet {
         employeesLocalServiceUtil.updateemployees(currentEmployee);
         response.setRenderParameter("jspPage", "/html/employees/menu.jsp");
     }
-
     public void swapPositionByArchive(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
         positions currentPosition = positionsLocalServiceUtil.
                 getpositions(Long.parseLong(request.getParameter("currentPositionID")));
@@ -170,5 +168,13 @@ public class LiferayEmployeesPortlet extends MVCPortlet {
 
         positionsLocalServiceUtil.updatepositions(currentPosition);
         response.setRenderParameter("jspPage", "/html/positions/menu.jsp");
+    }
+
+    // Show all Bank Clients
+    public void getCurrentBankWithClients (ActionRequest request, ActionResponse response) throws SystemException, PortalException {
+        String bankID = request.getParameter("currentBankWithClientsID");
+        banks currentBank = banksLocalServiceUtil.getbanks(Long.parseLong(bankID));
+        request.setAttribute("currentBankWithClients", currentBank);
+        response.setRenderParameter("jspPage", "/html/banks/clients.jsp");
     }
 }

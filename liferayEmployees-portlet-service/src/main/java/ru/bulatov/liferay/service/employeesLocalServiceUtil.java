@@ -264,9 +264,14 @@ public class employeesLocalServiceUtil {
     }
 
     public static java.util.List<ru.bulatov.liferay.model.employees> getemployeesesByArchive(
-        boolean archive, int start, int end)
+        boolean archive)
         throws com.liferay.portal.kernel.exception.SystemException {
-        return getService().getemployeesesByArchive(archive, start, end);
+        return getService().getemployeesesByArchive(archive);
+    }
+
+    public static java.util.List<ru.bulatov.liferay.model.employees> getBankClients(
+        long bankID) throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().getBankClients(bankID);
     }
 
     public static void clearService() {

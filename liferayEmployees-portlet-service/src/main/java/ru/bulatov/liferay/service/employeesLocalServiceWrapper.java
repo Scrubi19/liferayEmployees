@@ -272,10 +272,15 @@ public class employeesLocalServiceWrapper implements employeesLocalService,
 
     @Override
     public java.util.List<ru.bulatov.liferay.model.employees> getemployeesesByArchive(
-        boolean archive, int start, int end)
+        boolean archive)
         throws com.liferay.portal.kernel.exception.SystemException {
-        return _employeesLocalService.getemployeesesByArchive(archive, start,
-            end);
+        return _employeesLocalService.getemployeesesByArchive(archive);
+    }
+
+    @Override
+    public java.util.List<ru.bulatov.liferay.model.employees> getBankClients(
+        long bankID) throws com.liferay.portal.kernel.exception.SystemException {
+        return _employeesLocalService.getBankClients(bankID);
     }
 
     /**

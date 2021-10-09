@@ -241,6 +241,10 @@ public interface employeesLocalService extends BaseLocalService,
 
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public java.util.List<ru.bulatov.liferay.model.employees> getemployeesesByArchive(
-        boolean archive, int start, int end)
+        boolean archive)
         throws com.liferay.portal.kernel.exception.SystemException;
+
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+    public java.util.List<ru.bulatov.liferay.model.employees> getBankClients(
+        long bankID) throws com.liferay.portal.kernel.exception.SystemException;
 }

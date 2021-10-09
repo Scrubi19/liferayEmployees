@@ -47,6 +47,8 @@ public class employeesLocalServiceClpInvoker {
     private String[] _methodParameterTypes53;
     private String _methodName58;
     private String[] _methodParameterTypes58;
+    private String _methodName59;
+    private String[] _methodParameterTypes59;
 
     public employeesLocalServiceClpInvoker() {
         _methodName0 = "addemployees";
@@ -141,7 +143,11 @@ public class employeesLocalServiceClpInvoker {
 
         _methodName58 = "getemployeesesByArchive";
 
-        _methodParameterTypes58 = new String[] { "boolean", "int", "int" };
+        _methodParameterTypes58 = new String[] { "boolean" };
+
+        _methodName59 = "getBankClients";
+
+        _methodParameterTypes59 = new String[] { "long" };
     }
 
     public Object invokeMethod(String name, String[] parameterTypes,
@@ -247,9 +253,12 @@ public class employeesLocalServiceClpInvoker {
 
         if (_methodName58.equals(name) &&
                 Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
-            return employeesLocalServiceUtil.getemployeesesByArchive(((Boolean) arguments[0]).booleanValue(),
-                ((Integer) arguments[1]).intValue(),
-                ((Integer) arguments[2]).intValue());
+            return employeesLocalServiceUtil.getemployeesesByArchive(((Boolean) arguments[0]).booleanValue());
+        }
+
+        if (_methodName59.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes59, parameterTypes)) {
+            return employeesLocalServiceUtil.getBankClients(((Long) arguments[0]).longValue());
         }
 
         throw new UnsupportedOperationException();

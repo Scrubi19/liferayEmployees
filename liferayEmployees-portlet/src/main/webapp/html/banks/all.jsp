@@ -6,7 +6,6 @@
 
 <aui:button onClick="<%= addBank %>" value="Add new Bank"/>
 
-
 <liferay-ui:search-container>
     <liferay-ui:search-container-results
             results="<%=banksLocalServiceUtil.getbankses(searchContainer.getStart(), searchContainer.getEnd())%>"/>
@@ -19,6 +18,7 @@
         <liferay-ui:search-container-column-text property="bank_name" name = "Bank name"/>
         <liferay-ui:search-container-column-text property="bik" name = "BIC"/>
         <liferay-ui:search-container-column-text property="bank_address" name = "Address"/>
+        <liferay-ui:search-container-column-jsp  path="/html/banks/buttons/clients.jsp" align="right"/>
 
     </liferay-ui:search-container-row>
 

@@ -46,6 +46,8 @@ public class employeesLocalServiceClp implements employeesLocalService {
     private String[] _methodParameterTypes17;
     private String _methodName19;
     private String[] _methodParameterTypes19;
+    private String _methodName20;
+    private String[] _methodParameterTypes20;
 
     public employeesLocalServiceClp(InvokableLocalService invokableLocalService) {
         _invokableLocalService = invokableLocalService;
@@ -142,7 +144,11 @@ public class employeesLocalServiceClp implements employeesLocalService {
 
         _methodName19 = "getemployeesesByArchive";
 
-        _methodParameterTypes19 = new String[] { "boolean", "int", "int" };
+        _methodParameterTypes19 = new String[] { "boolean" };
+
+        _methodName20 = "getBankClients";
+
+        _methodParameterTypes20 = new String[] { "long" };
     }
 
     @Override
@@ -657,14 +663,39 @@ public class employeesLocalServiceClp implements employeesLocalService {
 
     @Override
     public java.util.List<ru.bulatov.liferay.model.employees> getemployeesesByArchive(
-        boolean archive, int start, int end)
+        boolean archive)
         throws com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName19,
-                    _methodParameterTypes19,
-                    new Object[] { archive, start, end });
+                    _methodParameterTypes19, new Object[] { archive });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (java.util.List<ru.bulatov.liferay.model.employees>) ClpSerializer.translateOutput(returnObj);
+    }
+
+    @Override
+    public java.util.List<ru.bulatov.liferay.model.employees> getBankClients(
+        long bankID) throws com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName20,
+                    _methodParameterTypes20, new Object[] { bankID });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="ru.bulatov.liferay.model.banks">
+		<field name="bank_id" type="long" />
+		<field name="bank_name" type="String" />
+		<field name="bik" type="String" />
+		<field name="bank_address" type="String" />
+	</model>
+	<model name="ru.bulatov.liferay.model.employees">
+		<field name="employee_id" type="long" />
+		<field name="lastname" type="String" />
+		<field name="firstname" type="String" />
+		<field name="middlename" type="String" />
+		<field name="gender" type="String" />
+		<field name="date_of_birth" type="String" />
+		<field name="date_of_employment" type="String" />
+		<field name="position_id" type="long" />
+		<field name="salary" type="long" />
+		<field name="work_phonenumber" type="String" />
+		<field name="mobile_phonenumber" type="String" />
+		<field name="bank_id" type="long" />
+		<field name="archive_status" type="boolean" />
+	</model>
+	<model name="ru.bulatov.liferay.model.positions">
+		<field name="position_id" type="long" />
+		<field name="position_name" type="String" />
+		<field name="archive_status" type="boolean" />
+	</model>
+</model-hints>

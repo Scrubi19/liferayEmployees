@@ -2,7 +2,7 @@
 
 <service-builder package-path="ru.bulatov.liferay">
 	<namespace>liferay</namespace>
-	<entity name="banks" uuid="true" local-service="true" remote-service="false">
+	<entity name="banks" local-service="true" remote-service="false">
 		<!-- PK fields -->
 		<column name="bank_id" type="long" primary="true" />
 		<!-- Group instance -->
@@ -11,15 +11,19 @@
 		<column name="bank_address" type="String" />
 	</entity>
 
-	<entity name="positions" uuid="true" local-service="true" remote-service="false">
+	<entity name="positions" local-service="true" remote-service="false">
 		<!-- PK fields -->
 		<column name="position_id" type="long" primary="true" />
 		<!-- Group instance -->
 		<column name="position_name" type="String" />
 		<column name="archive_status" type="boolean" />
+
+		<finder name="Archive" return-type="Collection">
+			<finder-column name="archive_status" />
+		</finder>
 	</entity>
 
-	<entity name="employees" uuid="true" local-service="true" remote-service="false">
+	<entity name="employees" local-service="true" remote-service="false">
 		<!-- PK fields -->
 		<column name="employee_id" type="long" primary="true" />
 		<!-- Group instance -->
@@ -29,14 +33,17 @@
 		<column name="gender" type="String" />
 		<column name="date_of_birth" type="String" />
 		<column name="date_of_employment" type="String" />
-		<column name="position_id" type="Collection" entity = "positions" />
+		<column name="position_id" type="long"/>
 		<column name="salary" type="long" />
 		<column name="work_phonenumber" type="String" />
 		<column name="mobile_phonenumber" type="String" />
-		<column name="bank_id" type="Collection" entity = "banks"  />
+		<column name="bank_id" type="long" />
 		<column name="archive_status" type="boolean" />
 
 		<!-- Finder methods -->
+		<finder name="Archive" return-type="Collection">
+			<finder-column name="archive_status" />
+		</finder>
 		<finder name="Bank_id" return-type="Collection">
 			<finder-column name="bank_id" />
 		</finder>
@@ -46,6 +53,4 @@
 		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
 		<reference package-path="com.liferay.portlet.asset" entity="AssetTag" />
 	</entity>
-
-
 </service-builder>

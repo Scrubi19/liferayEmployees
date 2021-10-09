@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="ru.bulatov.liferay.model.banks" />
+	<import class="ru.bulatov.liferay.model.employees" />
+	<import class="ru.bulatov.liferay.model.positions" />
+	<class name="ru.bulatov.liferay.model.impl.banksImpl" table="liferay_banks">
+		<cache usage="read-write" />
+		<id name="bank_id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="bank_name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="bik" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="bank_address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="ru.bulatov.liferay.model.impl.employeesImpl" table="liferay_employees">
+		<cache usage="read-write" />
+		<id name="employee_id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="lastname" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="firstname" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="middlename" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="gender" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="date_of_birth" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="date_of_employment" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="position_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="salary" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="work_phonenumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mobile_phonenumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="bank_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="archive_status" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="ru.bulatov.liferay.model.impl.positionsImpl" table="liferay_positions">
+		<cache usage="read-write" />
+		<id name="position_id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="position_name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="archive_status" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+</hibernate-mapping>
